@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+}
+
+html,
+body {
+  min-height: 100%;
+  font-family: "Funnel Display", sans-serif;
+  overflow-x: hidden;
+}
+
+.hero_section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.hero_section .video_filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+}
+
+.hero_section video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.navbar {
+  position: fixed;
+  height: 50px;
+  width: 95%;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 42px;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(20px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+  width: 38px;
+  flex-shrink: 0;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+  font-family: "Funnel Display";
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.96px;
+  position: relative;
+  left: 10px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  color: #fff;
+  font-family: "Funnel Display";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  position: relative;
+  right: 20px;
+}
+
+a.nav-link {
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.register-section {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  margin-top: 150px;
+}
+
+.register-section h1 {
+  color: white;
+  font-size: 40px;
+  font-weight: 500;
+  font-family: "Funnel Display";
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.register-section .highlight {
+  color: #ff003c;
+  font-weight: 800;
+}
+
+.game-options {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.game-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: "Funnel Display";
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.game-card img {
+  width: 220px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 20px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.game-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.game-card p {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+     .navbar-left {
+    font-size: 16px;
+    gap: 10px;
+  }
+
+  .navbar-right {
+    font-size: 15px;
+    gap: 20px;
+  }
+
+  .register-section h1 {
+    font-size: 24px;
+    padding: 0 20px;
+  }
+
+  .game-options {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .game-card img {
+    width: 50vw;
+    height: 50wh;
+  }
+
+  .game-card p {
+    font-size: 16px;
+  }
+}
+

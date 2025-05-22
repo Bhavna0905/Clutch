@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 a {
   text-decoration: none;
@@ -186,8 +189,8 @@ a.nav-link {
   height: 562px;
   width: 25%;
   border-radius: 30px;
-  background: rgba(252, 252, 252, 0.21);
-  backdrop-filter: blur(25px);
+  background-color: black;
+  /* backdrop-filter: blur(25px); */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -197,20 +200,20 @@ a.nav-link {
   font-family: "Funnel Display", sans-serif;
   font-size: 50px;
   font-weight: 500;
-  color: #ffffff;
+  color: #FF1341;
   text-align: left;
-  padding: 0 30px;
+  padding: 0 50px;
 }
 
 .abouttext p {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: 400;
-  color: #ffffff98;
+  color: #e3e3e3;
   text-align: left;
   margin-top: 20px;
   margin-bottom: 30px;
-  padding: 0 30px;
+  padding: 0 50px;
 }
 
 .images_container {
@@ -274,9 +277,8 @@ a.nav-link {
 }
 
 .contact-section {
-  background-color: #000;
   color: #fff;
-  padding: 80px 20px;
+  padding: 50px 20px;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -295,8 +297,8 @@ a.nav-link {
 
 .contact-section h1 {
   font-family: 'Funnel Display', sans-serif;
-  font-size: 3rem;
-  font-weight: 300;
+  font-size: 40px;
+  font-weight: 500;
   letter-spacing: 4px;
   margin-bottom: 0;
   color: #fff;
@@ -428,73 +430,73 @@ a.nav-link {
   .contact-section {
     padding: 60px 15px;
   }
-  
+
   .contact-section h1 {
     font-size: 2.5rem;
     letter-spacing: 2px;
   }
-  
+
   .contact-form {
     padding: 30px 20px;
   }
-  
+
   .social-icons {
     gap: 25px;
   }
-  
+
   .social-icon {
     width: 50px;
     height: 50px;
   }
-  
+
   .social-icon svg {
     width: 20px;
     height: 20px;
   }
-  
+
   .about_us {
     flex-direction: column;
     height: auto;
     padding: 40px 20px;
     gap: 30px;
   }
-  
+
   .abouttext {
     width: 90%;
     height: auto;
     padding: 30px 0;
   }
-  
+
   .abouttext h1 {
     font-size: 35px;
   }
-  
+
   .abouttext p {
     font-size: 16px;
   }
-  
+
   .images_container {
     width: 90%;
     height: 400px;
   }
-  
+
   .navbar {
     width: 90%;
   }
-  
+
   .navbar-left {
     font-size: 18px;
   }
-  
+
   .navbar-right {
     font-size: 16px;
     gap: 20px;
   }
-  
+
   .main_logo {
     width: 70%;
   }
-  
+
   .register-btn {
     font-size: 20px;
     padding: 8px 50px;
@@ -505,56 +507,150 @@ a.nav-link {
   .contact-container {
     gap: 40px;
   }
-  
+
   .contact-section h1 {
     font-size: 2rem;
   }
-  
+
   .contact-form {
     padding: 25px 15px;
   }
-  
+
   .social-icons {
     gap: 20px;
   }
-  
+
   .form-group input {
     padding: 12px 15px;
   }
-  
+
   .submit-btn {
     padding: 12px;
     font-size: 1rem;
   }
-  
+
   .abouttext h1 {
     font-size: 28px;
   }
-  
+
   .abouttext p {
     font-size: 14px;
   }
-  
+
   .navbar-left {
     font-size: 16px;
     gap: 10px;
   }
-  
+
   .navbar-right {
     font-size: 14px;
     gap: 15px;
   }
-  
+
   .logo {
     width: 32px;
   }
-  
+
   .main_logo {
     width: 80%;
   }
-  
+
   .register-btn {
     font-size: 18px;
     padding: 6px 40px;
+  }
+}
+
+
+/* CSS FOR OUR TOURNAMENTS SECTION*/
+
+.our_tournaments {
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  padding-top: 10px;
+  font-family: "Funnel Display", sans-serif;
+}
+
+.our_tournaments h1 {
+  font-family: "Funnel Display", sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  color: #ffffff;
+  text-align: center;
+  padding: 0 30px;
+  margin-bottom: 70px;
+}
+
+.tournament_cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: 100%;
+  max-height: 500px;
+  aspect-ratio: 3 / 5;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  width: 100%;
+}
+
+.overlay h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.overlay p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .tournament_cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+   .navbar-left {
+    font-size: 16px;
+    gap: 10px;
+  }
+
+  .navbar-right {
+    font-size: 15px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .overlay p {
+    margin: 5px 0 0;
+    font-size: 12px;
   }
 }
