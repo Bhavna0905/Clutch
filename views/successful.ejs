@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BGMI Registration - Clutch IIIT Kota</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/media/clutch logo circle.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            cursor: default;
+        }
+
+        html,
+        body {
+            min-height: 100%;
+            font-family: "Funnel Display", sans-serif;
+            overflow-x: hidden;
+        }
+
+        .hero_section {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .hero_section .video_filter {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.7;
+        }
+
+        .hero_section video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .navbar {
+            position: fixed;
+            height: 50px;
+            width: 95%;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 42px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 100%);
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(20px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+
+        .logo {
+            aspect-ratio: 1;
+            object-fit: contain;
+            object-position: center;
+            width: 38px;
+            flex-shrink: 0;
+        }
+
+        .navbar-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: #fff;
+            font-family: "Funnel Display";
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            letter-spacing: -0.96px;
+            position: relative;
+            left: 10px;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            color: #fff;
+            font-family: "Funnel Display";
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            position: relative;
+            right: 20px;
+        }
+
+        a.nav-link {
+            transform: translateY(-2px);
+            cursor: pointer;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .container h1 {
+            font-family: "Funnel Display", sans-serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: #ff003c;
+            text-align: center;
+            margin-top: 200px;
+            margin-bottom: 50px;
+        }
+
+        .backtohome {
+            font-family: "Funnel Display", sans-serif;
+            font-size: 20px;
+            font-weight: 500;
+            color: #fff;
+            background-color: #ff003c;
+            padding: 10px 20px;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .backtohome:hover {
+            background-color: #e60036;
+        }
+
+        
+
+        @media (max-width: 768px) {
+            .navbar-left {
+                font-size: 16px;
+                gap: 10px;
+            }
+
+            .navbar-right {
+                font-size: 15px;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero_section">
+        <video autoplay loop muted>
+            <source src="/media/clutch website bg glitch.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video_filter"></div>
+
+        <nav class="navbar">
+            <div class="navbar-left">
+                <img src="/media/clutch logo circle.png" class="logo" alt="Clutch logo">
+                <a href="/" class="nav-link">our network</a>
+            </div>
+            <div class="navbar-right">
+                <a href="/#tournaments" class="nav-link">tournaments</a>
+                <a href="/#contact" class="nav-link">contact us</a>
+            </div>
+        </nav>
+
+        <div class="container">
+            <h1>
+                Thanks For Registering!
+            </h1>
+            <a href="/" class="backtohome">Back to home</a>
+        </div>
+
+        
+    </div>
+
+</body>
+
+</html>
