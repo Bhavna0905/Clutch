@@ -7,25 +7,17 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
-const contactmodel = require('./model/contact');
-const bgmimodel = require('./model/bgmi');
-const valorantmodel = require('./model/valorant');
-const freefiremodel = require('./model/freefire');
+const contactmodel = require('./models/contact');
+const bgmimodel = require('./models/bgmi');
+const valorantmodel = require('./models/valorant');
+const freefiremodel = require('./models/freefire');
 
 app.get('/', (req, res) => {
     res.render('home');
 });
 
 app.get('/register', (req, res) => {
-    res.render('reg');
-});
-
-app.get('/tournaments', (req, res) => {
-    const tournament = req.query.tournament;
-    res.render('tournament', { 
-        tournament: tournament,
-        req: req  
-    });
+    res.render('registration');
 });
 
 app.get('/register/bgmi', (req, res) => {
@@ -33,20 +25,19 @@ app.get('/register/bgmi', (req, res) => {
 });
 
 app.get('/register/valorant', (req, res) => {
-    res.render('valorant');
+    res.render('val');
 });
 
 app.get('/register/freefire', (req, res) => {
-    res.render('freefire');
+    res.render('ff');
 });
-
 
 app.post('/contact', async (req, res) => {
     const { name, email, phone } = req.body;
     let newinfo = await contactmodel.create({
         name: name,
         email: email,
-        phone: phone,
+        phone: phone
     });
     res.json({ success: true, message: 'Form received!' });
 });
@@ -163,6 +154,17 @@ app.post('/register/freefire/submit', async (req, res) => {
         console.error(error);
         res.status(500).send('Error registering team. Please try again.');
     }
+});
+
+app.get('/tournament/:name', (req, res) => {
+    const { name } = req.params;
+    let past = false;
+    if (['ignition', 'formation', 'sl'].includes(name)) {
+        past = true;
+    }
+    res.render('tournament_page', {
+        name: req.params.name, past: past
+    });
 });
 
 app.listen(3000);
