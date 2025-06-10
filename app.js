@@ -25,11 +25,11 @@ app.get('/register/bgmi', (req, res) => {
 });
 
 app.get('/register/valorant', (req, res) => {
-    res.render('val');
+    res.render('valorant');
 });
 
 app.get('/register/freefire', (req, res) => {
-    res.render('ff');
+    res.render('freefire');
 });
 
 app.post('/contact', async (req, res) => {
