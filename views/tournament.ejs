@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Details</title>
+</head>
+<body>
+    <% const tournament = req.query.tournament; %>
+    
+    <div class="tournament-details">
+        <% if (tournament === 'ignition') { %>
+            <h1>IGNITION Tournament</h1>
+            <p>Held in November 2023</p>
+            
+        <% } else if (tournament === 'formation') { %>
+            <h1>FORMATION Tournament</h1>
+            <p>Held in February 2024</p>
+            
+        <% } else if (tournament === 'summit_league') { %>
+            <h1>SUMMIT LEAGUE Tournament</h1>
+            <p>Held in February 2024</p>
+        
+        <% } else if (tournament === 'summit_league_2') { %>
+            <h1>SUMMIT LEAGUE 2.0 Tournament</h1>
+            <p>Held in February 2025</p>
+            
+        <% } else { %>
+            <h1>All Tournaments</h1>
+            <p>Select a tournament to view details</p>
+        <% } %>
+    </div>
+</body>
+</html>

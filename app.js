@@ -20,6 +20,14 @@ app.get('/register', (req, res) => {
     res.render('reg');
 });
 
+app.get('/tournaments', (req, res) => {
+    const tournament = req.query.tournament;
+    res.render('tournament', { 
+        tournament: tournament,
+        req: req  
+    });
+});
+
 app.get('/register/bgmi', (req, res) => {
     res.render('bgmi');
 });
@@ -31,6 +39,7 @@ app.get('/register/valorant', (req, res) => {
 app.get('/register/freefire', (req, res) => {
     res.render('freefire');
 });
+
 
 app.post('/contact', async (req, res) => {
     const { name, email, phone } = req.body;
